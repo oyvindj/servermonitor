@@ -1,0 +1,10 @@
+{
+  "name": "servermonitor",
+  "description": "A server monitoring webapp",
+  "author": "oyvindj@me.com>",
+  "dependencies": {
+    "mysql" : ">= 0.0.1",
+    "restify" : ">= 0.0.1"
+  },
+  "engine": "node 0.10.15"
+}
