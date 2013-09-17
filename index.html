@@ -1,0 +1,35 @@
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+  <script rel="javascript">
+     function submitFoo() {   
+         var request = $.ajax({
+
+            url: "http://servermonitor.oyvindserver.com/foo",
+            async: false,
+            type: "POST",
+            data: {name: 'Magnus', salary: '10000'}, 
+            contentType: "application/x-www-form-urlencoded", //This is what made the difference.
+            dataType: "json",
+
+        });
+
+
+        request.success(function(result) {
+
+            console.log(result);
+
+        });
+
+        request.fail(function(jqXHR, textStatus) {
+            alert("Request failed: " + textStatus + ", jqXHR: " + jqXHR);
+            console.log(jqXHR);
+        });
+    }
+  </script>
+</head>
+<body>
+  <h1>Post sent</h1>
+  <button id="postButton" onclick="submitFoo()">Post</button>
+</body>
+</html>
